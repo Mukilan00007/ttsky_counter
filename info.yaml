@@ -1,38 +1,58 @@
+# Tiny Tapeout project information
 project:
-  title:      "8-bit Up/Down Counter"
-  description: "A simple synchronous 8-bit counter that can count up or down."
-  how_it_works: "The counter increments or decrements based on the value of ui_in[0] on each clock edge."
-  how_to_test:  "Toggle ui_in[0] to change direction and monitor uo_out for the binary count."
-  author:      "Your Name"
-  discord:     "" 
-  language:    "Verilog"
-  clock_hz:    10000000       # 10 MHz (typical for testing)
+  title:        "full_adder"      # Project title
+  author:       "Mukilan"         # Your name
+  discord:      ""                # Your discord username (optional)
+  description:  "A simple 1-bit full adder with carry-in and carry-out"
+  how_it_works: "Takes three 1-bit inputs (a, b, cin) and produces a sum and carry-out." # REQUIRED
+  how_to_test:  "Apply binary inputs to ui_in[0:2] and observe outputs on uo_out[0:1]."   # REQUIRED
+  language:     "Verilog" 
+  clock_hz:     0        
 
-# Mapping the pins
-inputs:
-  - up_down    # ui_in[0]
-  - none       # ui_in[1]
-  - none       # ui_in[2]
-  - none       # ui_in[3]
-  - none       # ui_in[4]
-  - none       # ui_in[5]
-  - none       # ui_in[6]
-  - none       # ui_in[7]
-outputs:
-  - count_0    # uo_out[0]
-  - count_1    # uo_out[1]
-  - count_2    # uo_out[2]
-  - count_3    # uo_out[3]
-  - count_4    # uo_out[4]
-  - count_5    # uo_out[5]
-  - count_6    # uo_out[6]
-  - count_7    # uo_out[7]
-bidirectional:
-  - none
-  - none
-  - none
-  - none
-  - none
-  - none
-  - none
-  - none
+  # How many tiles your design occupies? A 1x1 tile is standard for small projects.
+  tiles: "1x1"          
+
+  # Your top module name must match your verilog module name:
+  top_module:  "tt_um_example"
+
+  # List your project's source files here.
+  source_files:
+    - "project.v"
+
+# The pinout of your project. 
+pinout:
+  # Inputs (ui_in)
+  ui_in:
+    - "a"      # 0
+    - "b"      # 1
+    - "cin"    # 2
+    - "none"   # 3
+    - "none"   # 4
+    - "none"   # 5
+    - "none"   # 6
+    - "none"   # 7
+
+  # Outputs (uo_out)
+  uo_out:
+    - "sum"    # 0
+    - "cout"   # 1
+    - "none"   # 2
+    - "none"   # 3
+    - "none"   # 4
+    - "none"   # 5
+    - "none"   # 6
+    - "none"   # 7
+
+  # Bidirectional pins (uio_in/out/oe)
+  uio:
+    - "none"
+    - "none"
+    - "none"
+    - "none"
+    - "none"
+    - "none"
+    - "none"
+    - "none"
+
+# Do not change!
+yaml_version: 6
