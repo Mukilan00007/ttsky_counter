@@ -1,60 +1,50 @@
 # Tiny Tapeout project information
 project:
-  title:        "8-bit Up/Down Counter"      # Project title
-  author:       "Mukilan"                    # Your name
-  discord:      ""                           # Your discord username (optional)
+  title:        "8-bit Up/Down Counter"
+  author:       "Mukilan"
+  discord:      ""
   description:  "A synchronous 8-bit counter that increments or decrements based on input."
-  how_it_works: "The counter uses ui_in[0] to determine direction (1 for up, 0 for down) and outputs the 8-bit count on uo_out."
-  how_to_test:  "Apply a clock and toggle ui_in[0]. Observe the binary count on uo_out[7:0]."
+  how_it_works: "The counter uses ui[0] to determine direction (1 for up, 0 for down) and outputs the 8-bit count on uo."
+  how_to_test:  "Apply a clock and toggle ui[0]. Observe the binary count on uo[7:0]."
   language:     "Verilog" 
-  clock_hz:     10000000        # 10 MHz
+  clock_hz:     10000000
 
-  # How many tiles your design occupies?
   tiles: "1x1"          
-
-  # Your top module name must match your verilog module name:
   top_module:  "tt_um_example"
-
-  # List your project's source files here.
   source_files:
     - "project.v"
 
-# The pinout of your project. 
+# The pinout of your project as required by your specific YAML version
 pinout:
-  # Inputs (ui_in)
-  ui_in:
-    - "up_down" # 0 (1=Up, 0=Down)
-    - "none"    # 1
-    - "none"    # 2
-    - "none"    # 3
-    - "none"    # 4
-    - "none"    # 5
-    - "none"    # 6
-    - "none"    # 7
+  # Inputs
+  ui[0]: "up_down"
+  ui[1]: "none"
+  ui[2]: "none"
+  ui[3]: "none"
+  ui[4]: "none"
+  ui[5]: "none"
+  ui[6]: "none"
+  ui[7]: "none"
 
-  # Outputs (uo_out)
-  uo_out:
-    - "count_0" # 0 (LSB)
-    - "count_1" # 1
-    - "count_2" # 2
-    - "count_3" # 3
-    - "count_4" # 4
-    - "count_5" # 5
-    - "count_6" # 6
-    - "count_7" # 7 (MSB)
+  # Outputs
+  uo[0]: "count_0"
+  uo[1]: "count_1"
+  uo[2]: "count_2"
+  uo[3]: "count_3"
+  uo[4]: "count_4"
+  uo[5]: "count_5"
+  uo[6]: "count_6"
+  uo[7]: "count_7"
 
-  # Bidirectional pins
-  uio:
-    - "none"
-    - "none"
-    - "none"
-    - "none"
-    - "none"
-    - "none"
-    - "none"
-    - "none"
+  # Bidirectional
+  uio[0]: "none"
+  uio[1]: "none"
+  uio[2]: "none"
+  uio[3]: "none"
+  uio[4]: "none"
+  uio[5]: "none"
+  uio[6]: "none"
+  uio[7]: "none"
 
 # Do not change!
 yaml_version: 6
-
-
